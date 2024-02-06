@@ -3,7 +3,7 @@ import React from 'react'
 import Layout from '@/components/layouts/layout'
 import Cards from '@/components/products/cards'
 
-const imagenZapatilla = 'https://drive.google.com/uc?id=1CL6k2ySSGJ0-2NnVnbxtwDNghEeIxeKM'
+const imagenZapatilla = 'https://img.freepik.com/foto-gratis/zapatilla-deporte-colores-pintando-pintura-aerosol-color-purpura_123827-23438.jpg?w=996&t=st=1707237468~exp=1707238068~hmac=03c562cf2ec829c9ec44d67a7e8970dcb1b8b0c62ae1d5952ccf4f04cbe33f60'
 
 export default function ProductsPage() {
 
