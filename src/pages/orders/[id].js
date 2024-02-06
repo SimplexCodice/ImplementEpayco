@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import Script from 'next/script'
 
 import CartItem from '@/components/ui/cart-item'
 import { getOrderById } from '@/database/db-orders'
@@ -6,6 +7,13 @@ import Layout from '@/components/layouts/layout'
 import CreditAlert from '@/components/ui/credit-alert'
 
 export default function OrderPage({ order }) {
+
+  useEffect(() => {
+    let btnpay = document.getElementsByClassName('epayco-button-render')
+    setTimeout(() => {
+      btnpay[0].setAttribute('id','pago')
+    }, 1000);
+  },[])
 
   return (
     <Layout title={`Orden no ${order._id}`}>
@@ -90,7 +98,7 @@ export default function OrderPage({ order }) {
                 Pagar
               </label>}
               <form>
-                {/* <Script 
+                <Script 
                     src={process.env.NEXT_PUBLIC_PAYCO_CHECKOUT_URL}
                     data-epayco-key={process.env.NEXT_PUBLIC_DATA_EPAYCO_KEY}
                     data-epayco-private-key={process.env.NEXT_PUBLIC_DATA_EPAYCO_PRIVATE_KEY} 
@@ -101,7 +109,7 @@ export default function OrderPage({ order }) {
                     data-epayco-tax-ico='0.00'               
                     data-epayco-tax-base={order.total.toString()}
                     data-epayco-name='Test' 
-                    data-epayco-description='Test' 
+                    data-epayco-description={order.product.name} 
                     data-epayco-currency='cop'    
                     data-epayco-country='CO' 
                     data-epayco-test='true' 
@@ -111,10 +119,10 @@ export default function OrderPage({ order }) {
                     data-epayco-button='https://multimedia.epayco.co/dashboard/btns/btn3.png'
                     data-epayco-methodconfirmation="get"
                     data-epayco-type-doc-billing={'CC'}
-                    data-epayco-number-doc-billing={identification}
-                    data-epayco-name-billing={firstName+' '+lastName}
-                    data-epayco-mobilephone-billing={phone}
-                />  */}
+                    data-epayco-number-doc-billing={123456789}
+                    data-epayco-name-billing={order.firstName+' '+order.lastName}
+                    data-epayco-mobilephone-billing={3124567891}
+                /> 
               </form>
             </div>
             <br />
