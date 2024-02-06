@@ -1,9 +1,9 @@
 import React from 'react'
 
-import imagenZapatilla from '../../../public/images/zapatillas.jpg'
-
 import Layout from '@/components/layouts/layout'
 import Cards from '@/components/products/cards'
+
+const imagenZapatilla = 'https://drive.google.com/uc?id=1CL6k2ySSGJ0-2NnVnbxtwDNghEeIxeKM'
 
 export default function ProductsPage() {
 

@@ -7,12 +7,12 @@ import ButtonAdd from '@/components/ui/button-add'
 import ButtonReturn from '@/components/ui/button-return'
 import ItemCount from '@/components/ui/item-count'
 
-import imagenZapatilla from '../../../public/images/zapatillas.jpg'
-
 import Slider from 'react-slick'
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import tiendaApi from '@/api/tienda-api'
+
+const imagenZapatilla = 'https://drive.google.com/uc?id=1CL6k2ySSGJ0-2NnVnbxtwDNghEeIxeKM'
 
 export default function ProductPage() {
   const router = useRouter()
@@ -77,7 +77,6 @@ export default function ProductPage() {
     delete order.inStock
     
     order.quantity = Number(quantityItem)
-    order.image = order.image.src
     
     const { data } = await tiendaApi.post('/orders',{product: order})
     
