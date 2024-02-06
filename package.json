@@ -1,0 +1,27 @@
+{
+  "name": "implementepayco",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.5.1",
+    "@fortawesome/free-regular-svg-icons": "^6.5.1",
+    "@fortawesome/free-solid-svg-icons": "^6.5.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "axios": "^1.6.7",
+    "bcrypt": "^5.1.1",
+    "moment": "^2.30.1",
+    "mongoose": "^8.1.1",
+    "next": "13.5.6",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-slick": "^0.29.0",
+    "slick-carousel": "^1.8.1",
+    "uuid": "^9.0.1"
+  }
+}
