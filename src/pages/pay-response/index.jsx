@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import { useRouter } from 'next/router'
+import React from 'react'
 import Link from 'next/link'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -108,7 +107,7 @@ export const getServerSideProps = async ({ req, query }) => {
   let infoPay
 
   if (info.x_cod_response == 1) {
-    ecomApi.post('/orders/pay',{id:info.x_id_invoice})
+    tiendaApi.post('/orders/pay',{id:info.x_id_invoice})
     infoPay = {
       date: info.x_transaction_date,
       response: info.x_response,
