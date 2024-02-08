@@ -6,8 +6,6 @@ export default function handler(req, res) {
   switch (req.method) {
     case 'GET':
       return getOrder(req,res)
-    case 'POST':
-      return payOrder(req,res)
     default:
       return res.status(400).json({ message: 'Bad Request' })
   }

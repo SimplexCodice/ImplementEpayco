@@ -99,9 +99,9 @@ export default function OrderPage({ order }) {
               </label>}
               <form>
                 <Script 
-                    src={process.env.NEXT_PUBLIC_PAYCO_CHECKOUT_URL}
-                    data-epayco-key={process.env.NEXT_PUBLIC_DATA_EPAYCO_KEY}
-                    data-epayco-private-key={process.env.NEXT_PUBLIC_DATA_EPAYCO_PRIVATE_KEY} 
+                    src={process.env.NEXT_PUBLIC_EPAYCO_CHECKOUT_URL}
+                    data-epayco-key={process.env.NEXT_PUBLIC_EPAYCO_KEY}
+                    data-epayco-private-key={process.env.NEXT_PUBLIC_EPAYCO_PRIVATE_KEY} 
                     class='epayco-button' 
                     data-epayco-invoice={order._id}
                     data-epayco-amount={order.total.toString()} 

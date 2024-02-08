@@ -105,19 +105,16 @@ export const getServerSideProps = async ({ req, query }) => {
 
   const info = data.data
   let infoPay
-
-  if (info.x_cod_response == 1) {
-    tiendaApi.post('/orders/pay',{id:info.x_id_invoice})
-    infoPay = {
-      date: info.x_transaction_date,
-      response: info.x_response,
-      reference: info.x_id_invoice,
-      reason: info.x_response_reason_text,
-      receiptOfPayment: info.x_transaction_id,
-      bank: info.x_bank_name,
-      auth: info.x_approval_code,
-      total: info.x_amount + ' ' +info.x_currency_code
-    }
+    
+  infoPay = {
+    date: info.x_transaction_date,
+    response: info.x_response,
+    reference: info.x_id_invoice,
+    reason: info.x_response_reason_text,
+    receiptOfPayment: info.x_transaction_id,
+    bank: info.x_bank_name,
+    auth: info.x_approval_code,
+    total: info.x_amount + ' ' +info.x_currency_code
   }
 
   return {
